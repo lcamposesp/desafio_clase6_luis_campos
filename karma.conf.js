@@ -4,6 +4,8 @@
 //Enables Chromium from puppeteer
 process.env.CHROME_BIN = require('puppeteer').executablePath();
 
+
+
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -45,8 +47,13 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['ChromeHeadless'],
+    browsers: ['Chrome_for_jenkins'],
     singleRun: true,
-    restartOnFileChange: true,
+    customLaunchers:{
+      Chrome_for_jenkins:{
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox','--disable-setuid-sandbox']
+      }
+    }
   });
 };
