@@ -24,3 +24,5 @@ getTestBed().initTestEnvironment(
 const context = require.context('./', true, /\.spec\.ts$/);
 // And load the modules.
 context.keys().map(context);
+
+//Adding changes to the file so it can load in Jenkins

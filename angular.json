@@ -113,6 +113,7 @@
   },
   "defaultProject": "clase6",
   "cli": {
+    "analytics": "5010cf15-557b-4107-b0fe-7359d4815c5b",
     "defaultCollection": "@angular-eslint/schematics"
   }
 }

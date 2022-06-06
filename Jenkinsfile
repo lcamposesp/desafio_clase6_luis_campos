@@ -1,12 +1,12 @@
 pipeline{
     agent any
     tools{
-        nodejs 'nodejs14'
+        nodejs'18.3'
     }
     stages{
         stage('Build infraestructure'){
             steps{
-                echo 'install npm'
+                echo 'installing npm'
                 sh 'npm install'
             }
         }
@@ -35,6 +35,12 @@ pipeline{
             steps{
                 echo 'Deployment'
             }
+        }
+    }
+    post{
+        always{
+            echo "cleaning workspace"
+            cleanWs()
         }
     }
 }
