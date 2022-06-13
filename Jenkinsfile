@@ -35,6 +35,7 @@ pipeline{
             steps{
                 echo 'Comentario para que el build corra'
                 echo 'Deployment'
+                sh 'mv dist/ /var/www/html'
             }
         }
     }
